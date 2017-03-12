@@ -10,13 +10,13 @@
 
 (function(global, factory) {
     if (typeof define === "function" && define.amd) {
-        define(['angular', 'moment', 'fullcalendar'], factory);
+        define(['angular', 'jquery', 'moment', 'fullcalendar'], factory);
     } else if (typeof exports === "object") {
-        module.exports = factory(require('angular'), require('moment'), require('fullcalendar'));
+        module.exports = factory(require('angular'), require('jquery'), require('moment'), require('fullcalendar'));
     } else {
-        global.uiCalendarDirective = factory(global.angular, global.moment, global.fullcalendar);
+        global.uiCalendarDirective = factory(global.angular, global.jQuery, global.moment, global.fullcalendar);
     }
-})(this, function(angular) {
+})(this, function(angular, $) {
     'use strict';
     angular.module('ui.calendar', [])
 
