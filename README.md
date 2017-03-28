@@ -1,8 +1,38 @@
-# ui-calendar directive [![Build Status](https://travis-ci.org/angular-ui/ui-calendar.svg?branch=master)](https://travis-ci.org/angular-ui/ui-calendar)
-
-[![Join the chat at https://gitter.im/angular-ui/ui-calendar](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angular-ui/ui-calendar?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# ui-calendar directive
 
 A complete AngularJS directive for the Arshaw FullCalendar.
+
+---
+# fork info
+
+This fork is designed to run ui-calendar directive as an angular module. AMD module style is used to isolate jQuery and moment.  
+It was originaly forked from here: [https://github.com/pedrogoncalvesk/ui-calendar](https://github.com/pedrogoncalvesk/ui-calendar).
+
+## Install
+
+    npm install https://github.com/smartcrm/ui-calendar
+
+This command will install all necessary packages (jQuery, moment, FullCalendar).
+Include the `src/calendar.js` script provided by this component in your app.
+
+Make sure to add `ui.calendar` to your app’s module dependencies.
+
+```
+angular
+  .module('yourApp', [
+    'ui.calendar'
+  ]);
+````
+
+## FullCalendar locales
+
+All FullCalendar locales are included by default .
+
+## Accessing the calendar object
+
+To access `$.fullCalendar` object from the Arshaw FullCalendar documentation, import `uiCalendarConfig` service to the controller and run `uiCalendarConfig.fullCalendar` to get the desired object.
+
+---
 
 # Requirements
 

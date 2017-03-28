@@ -10,9 +10,12 @@
 
 (function(global, factory) {
     if (typeof define === "function" && define.amd) {
-        define(['angular', 'jquery', 'moment', 'fullcalendar'], factory);
-    } else if (typeof exports === "object") {
-        module.exports = factory(require('angular'), require('jquery'), require('moment'), require('fullcalendar'));
+    // AMD        
+        define(['angular', 'jquery', 'moment', 'fullcalendar', 'fullcalendar/dist/locale-all'], factory);
+    }
+    else if (typeof exports === "object") {
+    // CommonJs 
+        module.exports = factory(require('angular'), require('jquery'), require('moment'), require('fullcalendar'), require('fullcalendar/dist/locale-all'));
     } else {
         global.uiCalendarDirective = factory(global.angular, global.jQuery, global.moment, global.fullcalendar);
     }
@@ -21,7 +24,8 @@
     angular.module('ui.calendar', [])
 
         .constant('uiCalendarConfig', {
-            calendars : {}
+            calendars : {},
+            fullCalendar : $.fullCalendar
         })
         .controller('uiCalendarCtrl', ['$scope', '$locale', function ($scope, $locale) {
 
